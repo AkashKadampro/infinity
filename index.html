@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Infinity Capitals - Secure and Assured Investment Solutions">
+    <title>Infinity Capitals - Secure & Hedged Investment Solutions</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- For charts -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #005C8C;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+        }
+
+        nav {
+            text-align: center;
+            background-color: #333;
+        }
+
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        nav a:hover {
+            background-color: #575757;
+        }
+
+        section {
+            padding: 40px 20px;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: 2em;
+            color: #005C8C;
+            margin-bottom: 20px;
+        }
+
+        .feature-list {
+            list-style-type: disc; /* Default bullet point */
+            padding-left: 20px;  /* Ensure space for the bullets */
+            margin: 0;
+        }
+
+        .feature-list li {
+            margin-bottom: 10px;
+            line-height: 1.8; /* Ensure proper vertical spacing between list items */
+            font-size: 1.1em; /* Slightly increase font size for readability */
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Portfolio Section Styles */
+        .portfolio-section {
+            margin-top: 40px;
+        }
+
+        .chart-container {
+            width: 80%;
+            margin: 0 auto;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        canvas {
+            max-width: 100%;
+            margin: 20px 0;
+        }
+
+        /* Flexbox styling for displaying charts side by side */
+        .charts-wrapper {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        /* Table Styles */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #005C8C;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #ddd;
+        }
+
+        /* Styles for side-by-side table columns */
+        .investment-table th {
+            text-align: center;
+            width: 50%;
+        }
+
+        .investment-table td {
+            text-align: left;
+        }
+
+        /* Responsive Table - Stacking Columns on Mobile */
+        @media (max-width: 768px) {
+            .investment-table {
+                display: block;
+                width: 100%;
+            }
+
+            .investment-table th, .investment-table td {
+                width: 100%;
+                display: block;
+                text-align: left;
+            }
+
+            .investment-table td::before {
+                content: attr(data-label);
+                font-weight: bold;
+                display: block;
+                margin-bottom: 5px;
+            }
+        }
+
+        /* Contact Us Section Styles */
+        .contact-section {
+            background-color: #fff;
+            padding: 40px 20px;
+            margin-top: 40px;
+        }
+
+        .contact-info {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .contact-info p {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Infinity Capitals</h1>
+        <p>Your Trusted Partner for Secure, High-Yield Investment Solutions</p>
+    </header>
+
+    <nav>
+        <a href="#about">About Us</a>
+        <a href="#approach">Our Approach</a>
+        <a href="#services">Our Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact Us</a>
+    </nav>
+
+    <section id="about">
+        <div class="container">
+            <h2>About Infinity Capitals</h2>
+            <p>Infinity Capitals is a leading investment management firm that specializes in providing innovative financial solutions to our clients. We offer a unique strategy that combines share market investments and agricultural farming to create a diversified, hedged growth model that mitigates market volatility and provides secure, high-return opportunities for investors.</p>
+        </div>
+    </section>
+
+    <section id="approach">
+        <div class="container">
+            <h2>Our Approach</h2>
+            <p>At Infinity Capitals, we combine the dynamic potential of the share market with the steady returns from agricultural investments. Our hedged growth model ensures that we protect your investment while offering up to **40-48% assured returns** annually.</p>
+            
+            <h3>Key Features:</h3>
+            <ul class="feature-list">
+                <li><strong>Zero Risk, Zero Loss Policy:</strong> We guarantee a risk-free investment strategy that ensures no losses, even in times of market volatility.</li>
+                <li><strong>Assured Annual Returns:</strong> We provide up to 40-48% assured returns on your investment annually.</li>
+                <li><strong>Diversified Portfolio:</strong> Our balanced portfolio includes both high-growth equities and stable agricultural investments.</li>
+                <li><strong>Expert Team:</strong> Our team of financial experts and agricultural specialists ensure your investments are managed with the highest level of expertise.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <p>We offer customized investment solutions that are specifically designed to suit your financial goals and risk preferences.</p>
+            
+            <h3>Our Key Services Include:</h3>
+            <ul class="feature-list">
+                <li><strong>Individual Investment Plans:</strong> Tailored solutions to suit individual investor needs, focusing on both growth and security.</li>
+                <li><strong>Corporate Investment Solutions:</strong> Diversified strategies that protect capital and maximize returns for businesses and corporate clients.</li>
+                <li><strong>Portfolio Management:</strong> Professional management of diversified portfolios with active monitoring and strategic adjustments.</li>
+                <li><strong>Agricultural Investment Products:</strong> Stable, high-return agricultural ventures designed to hedge against market fluctuations.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio-section">
+        <div class="container">
+            <h2>Portfolio Overview</h2>
+            <p>Below is a combined view of our portfolio performance over three years, showcasing the growth of both the **Stocks** and **Agriculture** sectors.</p>
+
+            <!-- Merged Line Chart for Stocks and Agriculture Growth -->
+            <div class="chart-container">
+                <h3>Stocks and Agriculture Growth (2021 - 2023)</h3>
+                <canvas id="mergedPortfolio" width="400" height="200"></canvas>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Investment Types Table Section -->
+    <section id="investment-types">
+        <div class="container">
+            <h2>Our Investment Opportunities</h2>
+            <p>We focus on two major investment sectors: Indian Equity Markets and Agriculture Investments. Below is a detailed breakdown of our investment options:</p>
+
+            <table class="investment-table">
+                <thead>
+                    <tr>
+                        <th>Indian Equity Markets</th>
+                        <th>Agriculture Investments</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>We invest in a combination of stocks, bonds, and commodities like crude oil. The Indian equity market offers high growth potential, supported by a robust economy and increasing foreign investments. We carefully select stocks with solid fundamentals to provide steady returns for our investors.</td>
+                        <td>We are diversifying into high-return agricultural ventures such as goat farming, fish farming, agri-tourism, and organic farming for vegetables and fruits like pomegranates and guavas. These sectors provide stable, long-term returns, with the added benefit of contributing to sustainable farming practices.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Stocks:</strong> Large-cap, mid-cap, and small-cap stocks</td>
+                        <td><strong>Goat Farming:</strong> Investing in goat farming for high returns in livestock.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Bonds:</strong> Corporate and government bonds</td>
+                        <td><strong>Fish Farming:</strong> Sustainable fish farming for long-term growth.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Commodities:</strong> Crude oil and precious metals</td>
+                        <td><strong>Agri-Tourism:</strong> Bringing tourism and agriculture together to boost returns.</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><strong>Organic Vegetable Farming:</strong> Organic farming for growing vegetables like tomatoes and spinach.</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><strong>Fruit Farming:</strong> Growing fruits like pomegranates and guavas for high yield.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Contact Us Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p>If you have any questions or need more information, feel free to reach out to us. Our team is here to assist you.</p>
+
+            <div class="contact-info">
+                <p><strong>Email:</strong> info@infinitycapitals.com</p>
+                <p><strong>Phone:</strong> +1 234 567 890</p>
+                <p><strong>Address:</strong> 123 Infinity Street, Capital City, Country</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Infinity Capitals. All rights reserved.</p>
+        <p><a href="https://www.infinitycapitals.com">www.infinitycapitals.com</a></p>
+    </footer>
+
+    <script>
+        // Merged Line Chart for Stocks and Agriculture Growth (2021 - 2023)
+        var ctx = document.getElementById('mergedPortfolio').getContext('2d');
+        var mergedPortfolio = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['2021', '2022', '2023'], // Years on x-axis
+                datasets: [{
+                    label: 'Stocks Growth (%)',
+                    data: [8, 28, 35], // Stock growth for each year
+                    borderColor: 'rgba(0, 123, 255, 1)',
+                    backgroundColor: 'rgba(0, 123, 255, 0.2)',
+                    fill: true,
+                    tension: 0.4,
+                    pointRadius: 6, // Markers at each data point
+                    pointBackgroundColor: 'rgba(0, 123, 255, 1)',
+                    pointBorderColor: '#fff',
+                }, {
+                    label: 'Agriculture Growth (%)',
+                    data: [35, 15, 16], // Agriculture growth for each year
+                    borderColor: 'rgba(40, 167, 69, 1)',
+                    backgroundColor: 'rgba(40, 167, 69, 0.2)',
+                    fill: true,
+                    tension: 0.4,
+                    pointRadius: 6, // Markers at each data point
+                    pointBackgroundColor: 'rgba(40, 167, 69, 1)',
+                    pointBorderColor: '#fff',
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            stepSize: 10
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>
